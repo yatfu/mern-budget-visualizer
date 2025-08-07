@@ -30,11 +30,10 @@ const userSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  },
-  isAdmin: {
-    type: Boolean,
-    default: false
   }
 });
+;
+let User = mongoose.model('User', userSchema)
+let Variable = mongoose.model('Variable', variableSchema);
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = { User, Variable };
