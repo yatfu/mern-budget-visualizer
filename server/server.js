@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -5,7 +6,7 @@ require('dotenv').config();
 
 // INITIALIZE EXPRESS APP
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors()); // enable cors
 app.use(express.json()); // enable json parsing
