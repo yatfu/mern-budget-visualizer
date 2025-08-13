@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const variableSchema = new mongoose.Schema({
+const categorySchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -8,7 +8,8 @@ const variableSchema = new mongoose.Schema({
   },
   value: {
     type: Number,
-    required: true
+    required: true,
+    min: 0
   }
 });
 
@@ -23,8 +24,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  variables: {
-    type: [variableSchema],
+  categories: {
+    type: [categorySchema],
     default: []
   },
   createdAt: {
