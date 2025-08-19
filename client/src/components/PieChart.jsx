@@ -9,19 +9,14 @@ import {
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const PieChart = () => {
+const PieChart = ({categories, values}) => {
   // Random values for demo
   const data = {
-    labels: ['Rent', 'Food', 'Utilities', 'Entertainment'],
+    labels: categories,
     datasets: [
       {
         label: '$',
-        data: [
-          Math.floor(Math.random() * 100),
-          Math.floor(Math.random() * 100),
-          Math.floor(Math.random() * 100),
-          Math.floor(Math.random() * 100)
-        ],
+        data: values,
         backgroundColor: [
           'rgba(255, 99, 132, 0.7)',    // red
           'rgba(54, 162, 235, 0.7)',    // blue
@@ -35,7 +30,7 @@ const PieChart = () => {
   };
 
   const options = {
-    responsive: true,
+    responsive: false,
     cutout: '40%',
     plugins: {
       legend: {

@@ -11,7 +11,15 @@ function App() {
   return (
     <>
       <Nav></Nav>
-      <PieChart></PieChart>
+      <PieChart 
+        labels={['Rent', 'Food', 'Utilities', 'Entertainment']} 
+        values={[
+            Math.floor(Math.random() * 100),
+            Math.floor(Math.random() * 100),
+            Math.floor(Math.random() * 100),
+            Math.floor(Math.random() * 100)
+          ]}
+      />
     </>
   )
 }
