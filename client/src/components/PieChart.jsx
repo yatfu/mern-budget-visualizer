@@ -30,7 +30,7 @@ const PieChart = ({categories, values}) => {
   };
 
   const options = {
-    responsive: false,
+    responsive: true,
     cutout: '40%',
     plugins: {
       legend: {

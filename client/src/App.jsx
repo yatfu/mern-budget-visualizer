@@ -11,6 +11,7 @@ function App() {
   return (
     <>
       <Nav></Nav>
+      <h1>Budget Visualizer</h1>
       <PieChart 
         labels={['Rent', 'Food', 'Utilities', 'Entertainment']} 
         values={[
