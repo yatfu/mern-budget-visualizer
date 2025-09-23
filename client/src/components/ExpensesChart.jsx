@@ -9,7 +9,7 @@ import {
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const PieChart = ({categories, values}) => {
+const ExpensesChart = ({categories, values}) => {
   // Random values for demo
   const data = {
     labels: categories,
@@ -45,4 +45,4 @@ const PieChart = ({categories, values}) => {
   return <Doughnut data={data} options={options} />;
 };
 
-export default PieChart;
+export default ExpensesChart;
