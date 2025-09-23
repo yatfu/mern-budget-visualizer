@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Nav from './components/Nav'
 import PieChart from './components/PieChart'
+import ExpensesForm from './components/ExpensesForm'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
             Math.floor(Math.random() * 100)
           ]}
       />
+      <ExpensesForm />
     </>
   )
 }
