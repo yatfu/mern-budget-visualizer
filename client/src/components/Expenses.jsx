@@ -3,19 +3,19 @@ import ExpensesChart from './ExpensesChart';
 import { useState } from 'react';
 
 const Expenses = () => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([
+    { name: 'Housing/Rent', value: '3000' },
+    { name: 'Utilities', value: '500'},
+    { name: 'Food', value: '1000'},
+    { name: 'Other', value: '500'}
+  ]);
 
   return (
     <div>
       <h2>Expenses Dashboard</h2>
       <ExpensesChart 
-        labels={['Rent', 'Food', 'Utilities', 'Entertainment']} 
-        values={[
-            Math.floor(Math.random() * 100),
-            Math.floor(Math.random() * 100),
-            Math.floor(Math.random() * 100),
-            Math.floor(Math.random() * 100)
-          ]}
+        labels={categories.map(category => category.name)} 
+        values={categories.map(category => parseFloat(category.value))}
       />
       <ExpensesForm categories={categories} setCategories={setCategories} />
     </div>

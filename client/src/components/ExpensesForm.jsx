@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 
-const ExpensesForm = () => {
-  const [categories, setCategories] = useState([
-    { name: '', value: '' }
-  ]);
+const ExpensesForm = ({categories, setCategories}) => { // { PROPS }
 
   const handleChange = (index, field, value) => {
     const newCategories = [...categories];
@@ -40,9 +37,11 @@ const ExpensesForm = () => {
           />
           <input
             type="number"
+            min="0"
+            step="0.01"
             placeholder="Value"
             value={cat.value}
-            onChange={(e) => handleChange(index, 'value', e.target.value)}
+            onChange={(e) => handleChange(index, 'value', parseFloat(e.target.value))}
             required
           />
           <button type="button" onClick={() => {deleteCategory(index)}}>X</button>

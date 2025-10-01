@@ -9,10 +9,10 @@ import {
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const ExpensesChart = ({categories, values}) => {
+const ExpensesChart = ({labels, values}) => {
   // Random values for demo
   const data = {
-    labels: categories,
+    labels: labels,
     datasets: [
       {
         label: '$',
