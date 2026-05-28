@@ -11,3 +11,28 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model User {
+  id       Int    @id @default(autoincrement())
+  username String @unique @db.VarChar(100)
+  password String @db.VarChar(100)
+
+  createdAt DateTime @default(now())
+  categories Category[]
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+
+  // CURRENTLY USERID IS OPTIONAL UNTIL AUTH IS IMPLEMENTED
+  userId    Int?
+  user      User?     @relation(fields: [userId], references: [id])
+
+  name      String   @db.VarChar(100)
+  amount    Decimal  @db.Decimal(10, 2)
+
+  month     Int
+  year      Int
+
+  createdAt DateTime @default(now())
+}
